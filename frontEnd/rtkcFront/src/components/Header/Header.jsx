@@ -11,10 +11,10 @@ const Header = () => {
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/page1">Page 1</Link> {/* Add Bootstrap classes */}
+                                <Link className="nav-link" to="/aboutPizza">Pizza</Link> {/* Add Bootstrap classes */}
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/page2">Page 2</Link> {/* Add Bootstrap classes */}
+                                <Link className="nav-link" to="/aboutNoodles">Noodles</Link> {/* Add Bootstrap classes */}
                             </li>
                         </ul>
                     </div>
