@@ -12,7 +12,7 @@ def pizza_counter_view(request):
         return Response(pizzaSerializer.data)
     elif request.method == 'POST':
         pizzaCounter, created = PizzaCounter.objects.get_or_create(id=1)
-        pizzaCounter.count += 1
+        pizzaCounter.pizzaCount += 1
         pizzaCounter.save()
         pizzaSerializer = PizzaCounterSerializer(pizzaCounter)
         return Response(pizzaSerializer.data, status=status.HTTP_200_OK)
@@ -25,7 +25,7 @@ def noodle_counter_view(request):
         return Response(noodleSerializer.data)
     elif request.method == 'POST':
         noodleCounter, created = NoodleCounter.objects.get_or_create(id=1)
-        noodleCounter.count += 1
+        noodleCounter.noodleCount += 1
         noodleCounter.save()
         noodleSerializer = NoodleCounterSerializer(noodleCounter)
         return Response(noodleSerializer.data, status=status.HTTP_200_OK)
