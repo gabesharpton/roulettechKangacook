@@ -1,12 +1,10 @@
-
 import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import HomePage from './components/Home/HomePage'
 import AboutPizza from './components/Pizza/AboutPizza'
 import AboutNoodles from './components/Noodles/AboutNoodles'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-
 
   return (
     <>
