@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from .models import Question
-from .models import Choice
+from .models import PizzaCounter, NoodleCounter
 
-admin.site.register(Question)
-admin.site.register(Choice)
+
+admin.site.register(PizzaCounter)
+admin.site.register(NoodleCounter)
+

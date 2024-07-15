@@ -1,27 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const PizzaButton = () => {
     const [count, setCount] = useState(0);
 
-    const handleClick = () => {
-        setCount(count + 1);
+    useEffect(() => {
+        fetchCount();
+    }, []);
 
-        // Make API call to Django backend here
-        // You can use libraries like axios to make the API call
-        // For example:
-        // axios.post('/api/increment', { count: count + 1 })
-        //   .then(response => {
-        //     // Handle the response
-        //   })
-        //   .catch(error => {
-        //     // Handle the error
-        //   });
+    const fetchCount = async () => {
+        try {
+            const response = await axios.get('http://localhost:8000/api/pizzaOrNoodles/');
+            console.log('Fetch response:', response);
+            setCount(response.data.count);
+        } catch (error) {
+            console.error('Error fetching count:', error);
+        }
+    };
+
+    const incrementCount = async () => {
+        try {
+            const response = await axios.post('http://localhost:8000/api/pizzaOrNoodles/');
+            console.log('Increment response:', response);
+            setCount(response.data.count);
+        } catch (error) {
+            console.error('Error updating count:', error);
+        }
     };
 
     return (
-        <button style={{ fontSize: '24px', padding: '10px 20px' }} onClick={handleClick}>
-            Click me to add one to the API call count: {count}
-        </button>
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={incrementCount}>Increment</button>
+        </div>
     );
 };
 

@@ -26,12 +26,17 @@ SECRET_KEY = 'django-insecure-d3#6lb-kg(#00r15h@j5*zqvt_6j!&03$won=h7(z1t9ttqk6#
 DEBUG = True
 
 ALLOWED_HOSTS = []
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Add the URL of your React app
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    "pizzaOrNoodles.apps.PizzaornoodlesConfig",
+    'rest_framework',
+    'corsheaders',
+    'pizzaOrNoodles.apps.PizzaornoodlesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

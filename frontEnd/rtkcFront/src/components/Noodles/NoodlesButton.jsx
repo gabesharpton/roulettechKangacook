@@ -5,17 +5,8 @@ const NoodlesButton = () => {
 
     const handleClick = () => {
         setCount(count + 1);
-
-        // Make API call to Django backend here
-        // You can use libraries like axios to make the API call
-        // For example:
-        // axios.post('/api/increment', { count: count + 1 })
-        //   .then(response => {
-        //     // Handle the response
-        //   })
-        //   .catch(error => {
-        //     // Handle the error
-        //   });
+            
+        
     };
 
     return (
